@@ -1,0 +1,93 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM3ard0dXnpsYZaDz5lwfqC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ayushmanpanchakoti/2303a52294/blob/main/aiml%20assment1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "GlzMRQlhcT0N"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Lad exercise - implement Breadth first,"
+      ],
+      "metadata": {
+        "id": "jBIwdDo3cVxR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from queue import Queue\n",
+        "graph = {0: [1,3], 1:[0,2,3], 2:[1,4,5],3:[0,1,4],4:[2,3,5],5:[2,4]}\n",
+        "\n",
+        "print(\"The adjacency list representing the graph is:\")\n",
+        "print(graph)\n",
+        "\n",
+        "def bfs(graph, source):\n",
+        "    Q = Queue()\n",
+        "    visited_nodes = set()\n",
+        "    Q.put(source)\n",
+        "    visited_nodes.add(source)\n",
+        "    while not Q.empty():\n",
+        "        vertex = Q.get()\n",
+        "        print(vertex,end=\"-->\")\n",
+        "        for i in graph[vertex]:\n",
+        "          if i not in visited_nodes:\n",
+        "            Q.put(i)\n",
+        "            visited_nodes.add(i)\n",
+        "    print(\"\")\n",
+        "\n",
+        "bfs(graph,0)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zVHH9sgogBsD",
+        "outputId": "4e7f9705-a721-4fcf-a949-78f26029fdbf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The adjacency list representing the graph is:\n",
+            "{0: [1, 3], 1: [0, 2, 3], 2: [1, 4, 5], 3: [0, 1, 4], 4: [2, 3, 5], 5: [2, 4]}\n",
+            "0-->1-->3-->2-->4-->5-->\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
